@@ -1,14 +1,13 @@
 openapi: 3.0.3
 info:
   title: YAML TEST
-  description: 這是直接從YAML轉換的畫面，因application.yml關係，不要給servers.url，各路徑都要在前面加上/msb1bkedi
   version: 2.2.0
 tags:
 - name: TEST
   description: TEST Service Controller
 
 paths:
-  /msb1bkedi/test/anyOf:
+  /test/anyOf:
     post:
       tags:
       - TEST
@@ -34,7 +33,7 @@ paths:
                 anyOf:
                   - $ref: '#/components/schemas/addressLocation'
                   - $ref: '#/components/schemas/unLocationLocation'
-  /msb1bkedi/test/oneOf:
+  /test/oneOf:
     post:
       tags:
       - TEST
