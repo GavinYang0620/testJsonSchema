@@ -1,5 +1,6 @@
 # Requestbody
     {
+      "@type": "AddressLocation",
       "locationName": "Port of Amsterdam",
       "address": {
         "name": "Henrik",
@@ -12,3 +13,5 @@
         "country": "Denmark"
       }
     }
+
+**@type** is not original parameter for schema
