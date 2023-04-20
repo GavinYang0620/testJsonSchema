@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.shipmentonline.msb1bk.api.booking.to.test.AddressLocation;
-import com.shipmentonline.msb1bk.api.booking.to.test.PlaceOfBLIssue;
-import com.shipmentonline.msb1bk.api.booking.to.test.UnLocationLocation;
+import api.booking.to.test.AddressLocation;
+import api.booking.to.test.PlaceOfBLIssue;
+import api.booking.to.test.UnLocationLocation;
 
 @CrossOrigin({ "http://plusdvp.shipmentonline.com" })
 @RestController
