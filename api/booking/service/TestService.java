@@ -9,15 +9,15 @@ import io.swagger.annotations.Api;
 
 @Api(tags="TEST")
 public interface TestService {
-	@PostMapping(value = "/test/anyOf", produces = {MediaType.APPLICATION_JSON_VALUE})
-	@ResponseBody
-	public ResponseEntity<Object> anyOf(
-			@RequestBody(required = true) String str
-	);
-	
-	@PostMapping(value = "/test/oneOf", produces = {MediaType.APPLICATION_JSON_VALUE})
-	@ResponseBody
-	public ResponseEntity<Object> oneOf(
-			@RequestBody(required = true) String str
-	);
+    @PostMapping(value = "/test/anyOf", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseBody
+    public ResponseEntity<Object> anyOf(
+        @RequestBody(required = true) String str
+    );
+    
+    @PostMapping(value = "/test/oneOf", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseBody
+    public ResponseEntity<Object> oneOf(
+        @RequestBody(required = true) String str
+    );
 }
