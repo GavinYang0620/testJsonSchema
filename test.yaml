@@ -1,0 +1,177 @@
+openapi: 3.0.3
+info:
+  title: YAML TEST
+  description: 這是直接從YAML轉換的畫面，因application.yml關係，不要給servers.url，各路徑都要在前面加上/msb1bkedi
+  version: 2.2.0
+tags:
+- name: TEST
+  description: TEST Service Controller
+
+paths:
+  /msb1bkedi/test/anyOf:
+    post:
+      tags:
+      - TEST
+      summary: 模擬JsonSchema取出anyOf
+      operationId: anyOfUsingPOST
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              type: object
+              anyOf:
+                - $ref: '#/components/schemas/addressLocation'
+                - $ref: '#/components/schemas/unLocationLocation'
+        required: true
+      responses:
+        200:
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+                anyOf:
+                  - $ref: '#/components/schemas/addressLocation'
+                  - $ref: '#/components/schemas/unLocationLocation'
+  /msb1bkedi/test/oneOf:
+    post:
+      tags:
+      - TEST
+      summary: 模擬JsonSchema取出oneOf
+      operationId: oneOfUsingPOST
+      requestBody:
+        description: request
+        content:
+          application/json:
+            schema:
+              type: object
+              oneOf:
+                - $ref: '#/components/schemas/addressLocation'
+                - $ref: '#/components/schemas/unLocationLocation'
+        required: true
+      responses:
+        200:
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+                oneOf:
+                  - $ref: '#/components/schemas/addressLocation'
+                  - $ref: '#/components/schemas/unLocationLocation'
+components:
+  schemas:
+    addressLocation:
+      type: object
+      allOf:
+        - type: object
+          properties:
+            locationName: 
+              $ref: '#/components/schemas/locationName'
+        - type: object
+          properties:
+            address:
+              $ref: '#/components/schemas/address'
+    unLocationLocation:
+      type: object
+      description: |
+        An interface used to express a location using a `Un Location Code`
+      allOf:
+        - type: object
+          properties:
+            locationName:
+              $ref: '#/components/schemas/locationName'
+        - type: object
+          properties:
+            UNLocationCode:
+              $ref: '#/components/schemas/UNLocationCode'
+      required:
+        - UNLocationCode
+    address:
+      type: object
+      description: |
+        An object for storing address related information
+      allOf:
+        - type: object
+          properties:
+            name:
+              $ref: '#/components/schemas/addressName'
+        - type: object
+          properties:
+            street:
+              $ref: '#/components/schemas/streetName'
+        - type: object
+          properties:
+            streetNumber:
+              $ref: '#/components/schemas/streetNumber'
+        - type: object
+          properties:
+            floor:
+              $ref: '#/components/schemas/floor'
+        - type: object
+          properties:
+            postCode:
+              $ref: '#/components/schemas/postCode'
+        - type: object
+          properties:
+            city:
+              $ref: '#/components/schemas/cityName'
+        - type: object
+          properties:
+            stateRegion:
+              $ref: '#/components/schemas/stateRegion'
+        - type: object
+          properties:
+            country:
+              $ref: '#/components/schemas/country'
+    locationName: 
+      type: string
+      maxLength: 100
+      description: 'The name of the location.'
+      example: 'Port of Amsterdam'
+    UNLocationCode:
+      type: string
+      maxLength: 5
+      description: 'The UN Location code specifying where the place is located.'
+      example: FRPAR
+    addressName:
+      type: string
+      maxLength: 100
+      description: 'Name of the address'
+      example: 'Henrik'
+    streetName:
+      type: string
+      maxLength: 100
+      description: 'The name of the street of the party’s address.'
+      example: Kronprincessegade
+    streetNumber:
+      type: string
+      maxLength: 50
+      description: 'The number of the street of the party’s address.'
+      example: '54'
+    floor:
+      type: string
+      maxLength: 50
+      description: 'The floor of the party’s street number.'
+      example: '5. sal'
+    postCode:
+      type: string
+      maxLength: 50
+      description: 'The post code of the party’s address.'
+      example: '1306'
+    cityName:
+      type: string
+      example: 'København'
+      maxLength: 65
+      description: 'The city name of the party’s address.'
+    stateRegion:
+      type: string
+      maxLength: 65
+      description: 'The state/region of the party’s address.'
+      example: 'N/A'
+    country:
+      type: string
+      maxLength: 75
+      description: 'The country of the party’s address.'
+      example: 'Denmark'
