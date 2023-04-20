@@ -8,24 +8,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.ANY, getterVisibility=JsonAutoDetect.Visibility.NONE)
 public class UnLocationLocation implements PlaceOfBLIssue {
-	public String locationName;
-	
-	@NotBlank
-	public String UNLocationCode;
-	
-	public String getLocationName() {
-		return locationName;
-	}
-	
-	public void setLocationName(String locationName) {
-		this.locationName = locationName;
-	}
-	
-	public String getUNLocationCode() {
-		return UNLocationCode;
-	}
+    public String locationName;
+    
+    @NotBlank
+    public String UNLocationCode;
+    
+    public String getLocationName() {
+        return locationName;
+    }
+    
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+    
+    public String getUNLocationCode() {
+        return UNLocationCode;
+    }
 
-	public void setUNLocationCode(String UNLocationCode) {
-		this.UNLocationCode = UNLocationCode;
-	}
+    public void setUNLocationCode(String UNLocationCode) {
+        this.UNLocationCode = UNLocationCode;
+    }
 }
