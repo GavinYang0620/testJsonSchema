@@ -1,4 +1,4 @@
-package com.shipmentonline.msb1bk.api.booking.to.test;
+package api.booking.to.test;
 
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.NotBlank;
 
