@@ -1,4 +1,4 @@
-package com.shipmentonline.msb1bk.api.booking.to.test;
+package api.booking.to.test;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
