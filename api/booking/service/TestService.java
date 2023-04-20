@@ -1,4 +1,4 @@
-package com.shipmentonline.msb1bk.api.booking.service;
+package api.booking.service;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
