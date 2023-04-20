@@ -11,7 +11,7 @@ import api.booking.to.test.AddressLocation;
 import api.booking.to.test.PlaceOfBLIssue;
 import api.booking.to.test.UnLocationLocation;
 
-@CrossOrigin({ "http://plusdvp.shipmentonline.com" })
+@CrossOrigin({ "http://" })
 @RestController
 public class TestServiceController implements TestService {
     @Override
